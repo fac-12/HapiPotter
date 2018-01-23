@@ -17924,7 +17924,59 @@ var Dementor = exports.Dementor = function (_React$Component) {
 
   return Dementor;
 }(_react2.default.Component);
-},{"react":5,"../../public/dementor.png":30}],3:[function(require,module,exports) {
+},{"react":5,"../../public/dementor.png":30}],32:[function(require,module,exports) {
+module.exports="/dist/2ca66d15d1dcd92dcf89b08ce7312442.png";
+},{}],31:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Harry = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _harry = require("../../public/harry.png");
+
+var _harry2 = _interopRequireDefault(_harry);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Harry = exports.Harry = function (_React$Component) {
+  _inherits(Harry, _React$Component);
+
+  function Harry() {
+    _classCallCheck(this, Harry);
+
+    return _possibleConstructorReturn(this, (Harry.__proto__ || Object.getPrototypeOf(Harry)).apply(this, arguments));
+  }
+
+  _createClass(Harry, [{
+    key: "render",
+
+    // componentDidMount() {}
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement("img", { src: _harry2.default, alt: "Harry Potter image" })
+      );
+    }
+  }]);
+
+  return Harry;
+}(_react2.default.Component);
+},{"react":5,"../../public/harry.png":32}],3:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17938,6 +17990,8 @@ var _react = require("react");
 var _react2 = _interopRequireDefault(_react);
 
 var _Dementor = require("./Dementor");
+
+var _Harry = require("./Harry");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17959,7 +18013,12 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react2.default.createElement(_Dementor.Dementor, null);
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(_Dementor.Dementor, null),
+        _react2.default.createElement(_Harry.Harry, null)
+      );
     }
   }]);
 
@@ -17967,7 +18026,7 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
-},{"react":5,"./Dementor":29}],2:[function(require,module,exports) {
+},{"react":5,"./Dementor":29,"./Harry":31}],2:[function(require,module,exports) {
 "use strict";
 
 var _react = require("react");
