@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"_css_loader"}],"generated":{"css":".soulbar {\n  width: 200px;\n  height: 30px;\n  background: rgb(234, 234, 234);\n}\n","js":"\n        var reloadCSS = require('_css_loader');\n        module.hot.dispose(reloadCSS);\n        module.hot.accept(reloadCSS);\n      "},"hash":"9af4e113f6eb9dfcb8af6c3817aebcf6"}
