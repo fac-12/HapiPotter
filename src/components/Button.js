@@ -3,22 +3,29 @@ import styles from "./style";
 
 export class Button extends React.Component {
   state = {
-    health: 100
+    health: 100,
+    message: null
   };
   healthDecrement = () => {
-    setInterval(() => {
+    this.countdown = setInterval(() => {
       this.setState(props => {
-        console.log(props);
-        if (this.state.health > 0) {
+        if (this.state.health > 100) {
+          clearInterval(this.countdown);
+          console.log("more than 100");
+        } else if (this.state.health < 0) {
+          clearInterval(this.countdown);
+          console.log("ded");
+        } else {
           return { health: this.state.health - 1 };
         }
       });
     }, 50);
-    this.setState({ interval });
   };
+
   healthIncrement = () => {
     this.setState({ health: this.state.health + 2 });
   };
+
   restart = () => {
     this.setState({ health: 100 });
   };
@@ -26,7 +33,7 @@ export class Button extends React.Component {
     return (
       <div className="button__container">
         <div>
-          <button onClick={this.healthDecrement}>Fight</button>
+          <button onClick={this.healthDecrement}>Start Fight</button>
           <button onClick={this.healthIncrement}>Expecto patronum</button>
           <button onClick={this.restart}>Respawn</button>
         </div>
