@@ -1,37 +1,41 @@
 import React from "react";
+import styles from "./style";
 
 export class Button extends React.Component {
   state = {
-    health: 100,
-    interval: null
+    health: 100
   };
-
   healthDecrement = () => {
-    if (this.state.health > 0) {
-      const interval = setInterval(() => {
-        this.setState({ health: this.state.health - 10 });
-      }, 1000);
-      this.setState({ interval });
-    }
-    stop();
+    setInterval(() => {
+      this.setState(props => {
+        console.log(props);
+        if (this.state.health > 0) {
+          return { health: this.state.health - 1 };
+        }
+      });
+    }, 50);
+    this.setState({ interval });
   };
-
   healthIncrement = () => {
-    this.setState({ health: this.state.health + 1 });
+    this.setState({ health: this.state.health + 2 });
   };
-
-  stop = () => {
-    clearInterval(this.state.interval);
+  restart = () => {
     this.setState({ health: 100 });
   };
-
   render() {
     return (
-      <div>
-        <p>{this.state.health}</p>
-        <button onClick={this.healthDecrement}>Start</button>
-        <button onClick={this.healthIncrement}>Add health</button>
-        <button onClick={this.stop}>Stop</button>
+      <div className="button__container">
+        <div>
+          <button onClick={this.healthDecrement}>Fight</button>
+          <button onClick={this.healthIncrement}>Expecto patronum</button>
+          <button onClick={this.restart}>Respawn</button>
+        </div>
+        <div className="soulbar">
+          <div
+            className="soulbar__level"
+            style={{ width: `${this.state.health}%` }}
+          />
+        </div>
       </div>
     );
   }

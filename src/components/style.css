@@ -1,0 +1,69 @@
+.soulbar {
+  width: 200px;
+  height: 30px;
+  background: rgba(234, 234, 234, 0.2);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.soulbar__level {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to right, #e52d27, #b31217);
+}
+
+.harry__img {
+  width: 200px;
+  transform: scaleX(-1);
+  filter: FlipH;
+  margin-right: 50px;
+  animation: MoveUpDown 0.2s linear infinite;
+  position: absolute;
+  left: 25%;
+  bottom: 20%;
+}
+
+@keyframes MoveUpDown {
+  0% {
+    bottom: 30%;
+  }
+  50% {
+    bottom: 31%;
+  }
+  100% {
+    bottom: 30%;
+  }
+}
+
+.dementor__img {
+  width: 400px;
+  animation: MoveUpDownDementor 2s linear infinite;
+  position: absolute;
+  right: 20%;
+  bottom: 20%;
+}
+
+@keyframes MoveUpDownDementor {
+  0% {
+    bottom: 30%;
+  }
+  50% {
+    bottom: 33%;
+    transform: scale(0.85);
+  }
+  100% {
+    bottom: 30%;
+  }
+}
+
+.game__container {
+  background-size: cover;
+  /* filter: brightness(60%); */
+  height: 100vh;
+}
+
+.button__container {
+  position: absolute;
+  bottom: 15%;
+  left: 25%;
+}
