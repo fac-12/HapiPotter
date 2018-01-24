@@ -23,6 +23,7 @@
     "parcel-bundler": "^1.4.1"
   },
   "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
